@@ -16,14 +16,17 @@ char *_strdup(const char *str)
 		len++;
 	dup = malloc(sizeof(char) * (len + 1));
 	if (!dup)
+	{
+		free(dup);
 		return (NULL);
+	}
 	for (len++; len--;)
 		dup[len] = *--str;
 	return (dup);
 }
 
 /**
- * _strlen -  a function that returns the length of a string.
+ * _strlen - a function that returns the length of a string.
  *@s: char pointer
  *
  * Return: the length of a string
@@ -71,7 +74,7 @@ char *_strcpy(char *dest, char *src)
 /**
  * *_strcat - a function that concatenates two strings.
  * @dest: string
- *@src: string
+ * @src: string
  *
  * Return: string
  */
