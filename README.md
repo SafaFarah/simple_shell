@@ -1,5 +1,8 @@
 0x16. C - Simple Shell
-Tasks
-0. Betty would be proud
-mandatory
-Write a beautiful code that passes the Betty checks
+
+Write a UNIX command line interpreter.
+Handle command lines with arguments.
+Handle the PATH.
+Implement the exit built-in, that exits the shell.
+Implement the env built-in, that prints the current environment.
+write your own strtok function.
