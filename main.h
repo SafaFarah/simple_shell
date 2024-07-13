@@ -20,6 +20,7 @@ char *get_path(char *command);
 char *_getenv(const char *name);
 unsigned int d_isdelim(char c, const char *d);
 char *_strtok(char *str, const char *d);
+ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
 
 /* Helper Functions */
 char *_strdup(const char *str);
