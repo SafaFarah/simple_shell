@@ -11,14 +11,13 @@ void shl_cd(char **argv);
 *
 * Return: Always 0.
 */
-
 int main(__attribute__((unused))int ac, char **argv)
 {
     char *buff = NULL;
     char *buff_copy = NULL;
     size_t n = 0;
     ssize_t characters;
-    int i = 0, r_val;
+    int i = 0, r_val = 0;
 
     while (1)
     {
@@ -30,7 +29,7 @@ int main(__attribute__((unused))int ac, char **argv)
         if (characters == -1)
         {
             free(buff);
-            exit(0);
+            exit(r_val);
         }
         if (_e_check(buff))
         {
@@ -50,8 +49,7 @@ int main(__attribute__((unused))int ac, char **argv)
         {
             free(buff_copy);
             free(buff);
-            exit(0);
-            break;
+            exit(r_val);
         }
         else if (_strcmp(buff_copy, "env\n") == 0)
         {
@@ -145,3 +143,4 @@ void shl_cd(char **argv)
             perror("shl:");
     }
 }
+
