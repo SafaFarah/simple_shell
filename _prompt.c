@@ -68,24 +68,15 @@ int main(__attribute__((unused))int ac, char **argv)
             /* Handle the cd command*/
             shl_cd(argv);
         }
-        else if (_strcmp(buff_copy, "./hbtn_ls /var\n") == 0)
-        {
-            /* Execute the copy and then execute ./hbtn_ls /var*/
-            system("cp /bin/ls ./hbtn_ls");
-            system("./hbtn_ls /var");
-        }
         else
         {
             /* Parse and execute other commands*/
             argv = parsing_cmd(buff, buff_copy);
             r_val = execve_cmd(argv);
-            if (r_val == 1)
-            {
-                for (i = 0; argv[i]; i++)
-                    free(argv[i]);
-            }
+            for (i = 0; argv[i]; i++)
+                free(argv[i]);
+            free(argv);
         }
-        free(argv);
     }
     free(buff_copy);
     free(buff);
