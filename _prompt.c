@@ -25,7 +25,7 @@ int main(__attribute__((unused))int ac, char **argv)
         {
             write(1, "$cisnotfun ", 11);
         }
-        characters = _getline(&buff, &n, stdin);
+        characters = getline(&buff, &n, stdin);
         if (characters == -1)
         {
             free(buff);
